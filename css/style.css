@@ -1,0 +1,118 @@
+/* Global rowls */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --main-color: #28d5da;
+    --white-color: #eff9fb;
+    --transtion-delay: .3s
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0d1a2d;
+}
+
+/* style card */
+.card {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #15273f;
+    color: #798eab;
+}
+
+.card > figure {
+    position: relative;
+    cursor: pointer;
+    transition: var(--transtion-delay)
+}
+
+.card > figure img:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    z-index: 1;
+    display: none;
+}
+
+.card > figure img {max-width: 100%}
+
+.card > figure:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 213, 218, .5);
+}
+
+.card > figure:hover img:first-child {display: unset}
+
+.card h2 {
+    width: fit-content;
+    color: var(--white-color);
+    font-size: 16px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: var(--transtion-delay);
+}
+
+.card h2:hover {color: var(--main-color)}
+
+.card p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.card .content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #2d3f57;
+}
+
+.card .content section {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.card .content section img {margin-right: 5px;}
+
+.card .content section:first-child {color: var(--main-color)}
+
+.card .footer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.card .footer img {
+    width: 35px;
+    margin-right: 15px;
+    background: var(--white-color);
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.card .footer span {
+    color: var(--white-color);
+    cursor: pointer;
+    transition: var(--transtion-delay);
+}
+
+.card .footer span:hover {color: var(--main-color)}
